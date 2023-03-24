@@ -24,7 +24,7 @@ for(let i =0; i < estados.length; i++){//PEGANDO VALAOR TOTAL DOS ESTADOS
     valortotal = valortotal + valorEstadoAtual
 }
 
-for(let i =0; i < estados.length; i++){
+for(let i =0; i < estados.length; i++){ //executando calculo da porcentagem
     valorEstadoAtual = estados[i].valor;
    let percentualEstado = (valorEstadoAtual/valortotal) * 100;
    console.log(`\n ${estados[i].estado} teve um percentual de ${percentualEstado.toFixed(0)}% referente ao valor total que foi R$ ${valortotal} .` )
