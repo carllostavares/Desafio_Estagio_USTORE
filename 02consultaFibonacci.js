@@ -1,4 +1,5 @@
 //sera necessario executar " npm install pormpt-sync " no terminal antes de axecutar o programa.
+//para executar o programa, digite no teminal :  node 02somaFibonacci.js
 
 const numRecebido = require('prompt-sync')();
 
@@ -18,9 +19,9 @@ while(!achou){
   
   if (c === num) {
     achou = true;
-    console.log(`O ${num} pertence à sequência de Fibonacci.`);
+    console.log(`O número ${num} pertence à sequência de Fibonacci.`);
   } else {
-    console.log(num + " não pertence à sequência de Fibonacci.");
+    console.log(num + " não pertence à sequência de Fibonacci !");
     achou = true;
 
   }
