@@ -26,29 +26,49 @@ let num = parseFloat(leia("Digite um número:"))
  switch (num) {
 
     case 1:
-    let menorValor = Infinity;
+        let menorValor = Infinity;
         for (let i = 0; i < faturamento.length; i++) {
            let valorAtual = faturamento[i].valor;
            if(valorAtual < menorValor)
            menorValor = valorAtual;
      }
-     console.log(`\n>>>>>>>> O menor valor em um dia do mês foi R$${menorValor.toFixed(1)}.`)
+     console.log(`\n>>>>>>>> O menor valor em um dia do mês foi R$ ${parseFloat(menorValor.toFixed(1))}. <<<<<<<<`)
     
     break;
 
     case 2:
         let maiorValor = -Infinity;
-        let i = 0; 
-        for (i = 0; i < faturamento.length; i++) {
+
+        for (let i = 0; i < faturamento.length; i++) {
            let valorAtual = faturamento[i].valor;
            if(valorAtual > maiorValor)
            maiorValor = valorAtual;
      }
-     console.log(`\n>>>>>>>> O maior valor em um dia do mês foi R$${maiorValor.toFixed(4)} .`)
+     console.log(`\n>>>>>>>> O maior valor em um dia do mês foi R$ ${parseFloat(maiorValor.toFixed(4))} . <<<<<<<<`)
 
     break;
 
     case 3:
+        let totalMensal=0;
+        let diaMaiorQueFaturamentoMes=0;
+        let diasFaturamento =0 ;//calculando os dias de faturamento e a media do valor total.
+        for (let i = 0; i < faturamento.length; i++) {
+            let atual = faturamento[i].valor;
+            if(atual != 0){
+            diasFaturamento++
+            }
+            totalMensal = totalMensal + atual;
+        }            
+       let valorMediaMensal = totalMensal/diasFaturamento;
+       //virificando o numero de vezes que o vaturamento do dia foi maior que o do mês com dias válidos.
+        for(i = 0; i < faturamento.length; i++){
+            let atual = faturamento[i].valor;
+            if(atual > 0 && atual > valorMediaMensal){
+                diaMaiorQueFaturamentoMes++;
+            }
+        }
+
+       console.log(`\n>>>>>>>> ${diaMaiorQueFaturamentoMes}, é número de dias no mês em que o valor de faturamento diário foi superior à média mensal. <<<<<<<<`)
 
     break;
 
